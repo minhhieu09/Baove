@@ -29,7 +29,7 @@ class MomoService extends BaseService
             $requestId = time() . "";
             $extraData = "";
             $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
-            $partnerClientId = 'hungvumanh11o23@gmail.com';
+            $partnerClientId = 'minhhieu9x9z@gmail.com';
 
             $rawHash = "accessKey=" . $accessKey .
                 "&amount=" . $amount .

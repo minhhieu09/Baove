@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductColorController;
 use App\Http\Controllers\ProductComponentController;
 use App\Http\Controllers\ProductSpecialController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\VNPayController;
@@ -91,6 +92,13 @@ Route::prefix('store')->group(function () {
     Route::get('detail', [StoreController::class, 'detail'])->name(STORE_PRODUCT_DETAIL);
 
     Route::get('send', [StoreController::class, 'sendMail']);
+
+    //Payment stripe
+    Route::prefix('stripe')->group(function () {
+        Route::get('success', [StripeController::class, 'success']);
+    });
+
+    Route::get('send', [StoreController::class, 'sendMail']);
 });
 
 //Admin Management
@@ -154,3 +162,6 @@ Route::prefix('admin')->middleware('admin')->group(function() {
        return view('store.index');
     });
 });
+
+Route::post('payment',[PaymentController::class,'payment'])->name('store.payment');
+Route::get('payment-success',[PaymentController::class,'paymentSuccess'])->name('payment.success');

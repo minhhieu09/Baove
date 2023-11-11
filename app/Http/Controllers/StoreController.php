@@ -8,15 +8,12 @@ use App\Models\ProductRatingModel;
 use App\Models\SpecialModel;
 use App\Models\SpecialProductModel;
 use App\Services\CustomerService;
-use App\Services\MomoService;
 use App\Services\PaymentService;
 use App\Services\ProductColorService;
 use App\Services\ProductComponentService;
 use App\Services\ProductSpecialService;
 use App\Services\ProductTypeService;
 use App\Services\StoreService;
-use App\Services\StripeService;
-use App\Services\VnpayService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -32,11 +29,8 @@ class StoreController extends Controller
     protected $productSpecialService;
     protected $productComponentService;
     protected $productColorService;
-    protected $momoService;
-    protected $vnpayService;
     protected $paymentService;
     protected $productTypeService;
-    protected $stripeService;
 
     public function __construct(
         ProductService          $productService,
@@ -45,11 +39,8 @@ class StoreController extends Controller
         ProductSpecialService   $productSpecialService,
         ProductComponentService $productComponentService,
         ProductColorService     $productColorService,
-        MomoService             $momoService,
-        VnpayService            $vnpayService,
         PaymentService          $paymentService,
-        ProductTypeService      $productTypeService,
-        StripeService           $stripeService
+        ProductTypeService      $productTypeService
     )
     {
         $this->productService           = $productService;
@@ -58,11 +49,8 @@ class StoreController extends Controller
         $this->productSpecialService    = $productSpecialService;
         $this->productComponentService  = $productComponentService;
         $this->productColorService      = $productColorService;
-        $this->momoService              = $momoService;
-        $this->vnpayService             = $vnpayService;
         $this->paymentService           = $paymentService;
         $this->productTypeService       = $productTypeService;
-        $this->stripeService            = $stripeService;
     }
 
     public function index()

@@ -4,7 +4,7 @@
     @include('common.noti_message')
 <!-- Content -->
 <div class="container mt-5">
-    <form action="{{route('payment.complete')}}" method="post">
+    <form action="{{route('store.payment')}}" method="post">
         @csrf
         <div class="row">
             <div class="col-md-8">
@@ -93,6 +93,17 @@
                                 <span>VND</span>
                             </p>
                             <p>0 VND</p>
+                        </div>
+                    </div>
+                    <hr class="mt-2">
+                    <div>
+                        <div>
+                            <label>Chọn phương thức thanh toán</label>
+                        </div>
+                        <div style="margin-top: 10px">
+                            <img src="{{ asset('images/creadit-card.jpg') }}" alt="vnpay_icon" style="width: 30px">
+                            <label for="">Stripe</label>
+                            <input type="radio" name="payment_type" value="stripe">
                         </div>
                     </div>
                     <hr class="mt-2">
