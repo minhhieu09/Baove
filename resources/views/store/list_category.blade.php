@@ -52,7 +52,11 @@
                             <div class="border-product">
                                 <img class="img-thumbnail" src="{{ asset('images/' . $product->component->first()->image ?? null) }}">
                                 <div class="pt-3"><strong>{{ $product->name }}</strong></div>
-                                <p>While/Black</p>
+                                @php
+                                    $colors = $product->component->pluck('color.name')->toArray();
+                                    $combinedColors = implode('/', $colors);
+                                @endphp
+                                <p>{{ $combinedColors }}</p>
                                 <div>
                                     <strong>
                                         {{ number_format($product->component->first()->price, 0, '.', '.') ?? null }} VND

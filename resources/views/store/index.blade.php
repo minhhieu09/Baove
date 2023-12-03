@@ -42,7 +42,11 @@
                             <img src="{{ asset('images/' . $row->component->first()->image) }}"
                                 class="img-thumbnail">
                             <div class="pt-3 name"><strong>{{ $row->name }}</strong></div>
-                            <p>While/Black</p>
+                            @php
+                                $colors = $row->component->pluck('color.name')->toArray();
+                                $combinedColors = implode('/', $colors);
+                            @endphp
+                            <p>{{ $combinedColors }}</p>
                             <div>
                                 <strong class="price">
                                     {{ number_format($row->component->first()->price) }} VNĐ

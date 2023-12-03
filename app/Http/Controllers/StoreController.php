@@ -57,7 +57,6 @@ class StoreController extends Controller
     {
 //        dd($this->productService->insert(1));
         $assign['specials'] = $this->productSpecialService->allAvailable()->load('product.component.color');
-
         return view('store.index', $assign);
     }
 
