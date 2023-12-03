@@ -89,7 +89,7 @@ class MomoController extends Controller
     {
         try {
             $data = $request->all();
-            if ($data['errorCode'] == '42') {
+            if ($data['errorCode'] ?? NULL == '42') {
                 return redirect()->to(route(STORE_CART));
             }
 

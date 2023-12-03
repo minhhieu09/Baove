@@ -101,7 +101,7 @@
                         @foreach($payments as $paymentInfo)
                             <tr>
                                 <td>{{ $i++ }}</td>
-                                <td>{{ $paymentInfo->product_name }}</td>
+                                <td>{{ $paymentInfo->product_id }}</td>
                                 <td>{{ $paymentInfo->memory }}</td>
                                 <td>{{ $paymentInfo->color }}</td>
                                 <td>{{ $paymentInfo->amount }}</td>

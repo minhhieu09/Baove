@@ -105,6 +105,11 @@
                             <label for="">Stripe</label>
                             <input type="radio" name="payment_type" value="stripe">
                         </div>
+                        <div style="margin-top: 10px">
+                            <img src="{{ asset('images/momo_icon.png') }}" alt="momo_icon" style="width: 30px">
+                            <label for="">Momo</label>
+                            <input type="radio" name="payment_type" value="momo" checked>
+                        </div>
                     </div>
                     <hr class="mt-2">
                     <div class="thanhtoan">

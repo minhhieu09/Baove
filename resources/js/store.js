@@ -5,18 +5,18 @@ $(document).ready(function () {
         }
     });
 
-    function hiddenBox() {
-        $('#helper').hide();
-    }
-
-    window.oncontextmenu = function (e) {
-        e.preventDefault()
-
-        var box = $('#helper');
-        box.show()
-        box.css('left', e.pageX + 'px')
-        box.css('top', e.pageY + 'px')
-    };
+    // function hiddenBox() {
+    //     $('#helper').hide();
+    // }
+    //
+    // window.oncontextmenu = function (e) {
+    //     e.preventDefault()
+    //
+    //     var box = $('#helper');
+    //     box.show()
+    //     box.css('left', e.pageX + 'px')
+    //     box.css('top', e.pageY + 'px')
+    // };
 
     window.onclick = function () {
         hiddenBox();

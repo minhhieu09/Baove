@@ -91,6 +91,16 @@ Route::prefix('store')->group(function () {
     });
     Route::get('detail', [StoreController::class, 'detail'])->name(STORE_PRODUCT_DETAIL);
 
+    //Payment momo
+    Route::prefix('momo')->group(function () {
+        Route::get('atm', [MomoController::class, 'index'])->name(VIEW_PAYMENT_MOMO);
+        Route::post('atm', [MomoController::class, 'atm'])->name(CREATE_PAYMENT_MOMO);
+
+        //Webhook momo
+        Route::get('result', [MomoController::class, 'result'])->name(RESULT_PAYMENT_MOMO);
+
+    });
+
     Route::get('send', [StoreController::class, 'sendMail']);
 
     //Payment stripe

@@ -6,6 +6,7 @@ use App\Models\PaymentModel;
 use App\Models\ProductComponentModel;
 use App\Services\PaymentService;
 use App\Services\StripeService;
+use App\Services\MomoService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,14 +14,17 @@ class PaymentController extends Controller
 {
     protected $paymentService;
     protected $stripeService;
+    protected $MomoService;
 
     public function __construct(
         PaymentService          $paymentService,
-        StripeService           $stripeService
+        StripeService           $stripeService,
+        MomoService             $MomoService
     )
     {
         $this->paymentService           = $paymentService;
         $this->stripeService            = $stripeService;
+        $this->MomoService              = $MomoService;
     }
     //
     public function payment(Request $request){
@@ -67,6 +71,8 @@ class PaymentController extends Controller
 
         if ($dataRequest['payment_type'] == 'stripe') {
             $payUrl = $this->stripeService->createPayment($data['order_id'], $dataRequest['total']);
+        }else{
+            $payUrl = $this->MomoService->createPayment($data['order_id'], $dataRequest['total']);
         }
 
         return redirect()->to($payUrl);

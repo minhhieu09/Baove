@@ -22,7 +22,7 @@ $(document).ready(function() {
 			$(".dropdown-giohang").css('display', 'block').addClass('animate__bounceIn');
 		}
 	});
-	
+
 	//tro ve dau trang
 	$("#scroll-top").click(function(event) {
 		$("html, body").animate({ scrollTop:0 }, 1400);
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		var donhang = Number($(this).closest('.container').find('#price-don').html());
 		$(this).closest('.container').find('#price-don').html(dongia+donhang);
 		//alert(dongia);
-		
+
 	});
 	$(".giam").click(function(event) {
 		var tg = $(this).closest('.slg-sanpham');
@@ -58,7 +58,7 @@ $(document).ready(function() {
 				color: 'black'
 			});
 		}
-		
+
 	});
 
 	//dropdown-danhsach
@@ -76,5 +76,5 @@ $(document).ready(function() {
 	$(".add-cart").click(function(event) {
 		$("#add-cart-effect").fadeIn('slow').fadeOut('slow');
 	});
-	
+
 });
