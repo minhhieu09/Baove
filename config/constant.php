@@ -100,7 +100,9 @@ define('ADMIN_PRODUCT_COMPONENT_STORE', 'admin.product.component.store');
 define('PRODUCT_MEMORY', [
     '32'    => '32GB',
     '64'    => '64GB',
-    '128'   => '128GB'
+    '128'   => '128GB',
+    '256'   => '256GB',
+    '512'   => '512GB'
 ]);
 
 define('PAGINATE_DEFAULT', 5);
